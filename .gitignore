@@ -1,7 +1,9 @@
-datasets
+datasets/*
 data_engine
-models
+models/*
 results/*
 
-!results/.gitkeep 
+!results/.gitkeep
+!models/.gitkeep
+!datasets/.gitkeep
 
