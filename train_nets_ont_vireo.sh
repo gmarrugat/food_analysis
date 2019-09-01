@@ -1,0 +1,9 @@
+python -u main_train.py config_file=config_files/config_mtl_dish_ingr_ont_prob_vireo
+
+python -u main_train.py config_file=config_files/config_mtl_ingr_ingr_ont_prob_vireo
+
+python -u main_train.py config_file=config_files/config_mtl_ingr_dish_ont_prob_vireo
+
+python -u main_train.py config_file=config_files/config_mtl_dish_ingr_ingr_dish_ont_prob_vireo
+
+python -u main_train.py config_file=config_files/config_mtl_full_ont_prob_vireo
