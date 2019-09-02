@@ -92,7 +92,7 @@ To execute the models execute the script **main_train.py** passing a configurati
 
 The config_files directory contains all the configuration files used. The set the hyperparameters for each execution as well as the dataset used, ontology used and the target directories where to save the results.
 
-The different models can be executed sequentially if the execution commands are added to an _.sh_ file, as it is done in **train_nets_ont_vireo.sh**
+The different models can be executed sequentially if the execution commands are added to an _.sh_ file, as it is done in **train_nets_ont_vireo.sh**.
 
 
 # Results
