@@ -78,9 +78,9 @@ The notebook **Analyse image distribution.ipynb** does a proper statistical anal
  
 The  methodology to build the ontology is different for the two datasets.
 
-For Recipes5k, the notebook **Recipes5k_prepare_data.ipynb** creates the files which contain the different relations, probabilities and concepts list. Once these files are generated, executing **Food_Analysis.py** file will generate the different Ontology files structures. At the end of the script **Food_Analysis.py** there is the execution parameters, _probabilities_ and _ontology_type_ define which type of relational value will conform the ontology generated.
+For Recipes5k, the notebook **Recipes5k_prepare_data.ipynb** creates the files which contain the different relations, probabilities and concepts list. Once these files are generated, executing **Food_Analysis.py** file will generate the different Ontology files structures. At the end of the script **Food_Analysis.py** there are the execution parameters, _probabilities_ and _ontology_type_ define which type of relational value will conform the ontology generated.
 
-It was the beginning of the project and we were playing around with the data, that´s why we used a notebook. 
+It was the beginning of the project and we were playing around with the data, that´s why we used a notebook to do a tough task like this. 
 
 For VireoFood-172, just run **make_ontology_matrix.py** and all the different structure value combinations will be built.
 
