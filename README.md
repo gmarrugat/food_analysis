@@ -29,13 +29,30 @@ This MSc project was begun with the idea that the relations between the elements
 
 # Model Proposal
 
-In order to represent these relations and include them in the model, a two dimensional layer was created, 
+In order to represent these relations and include them in the model, a two dimensional layer was created, called the Ontology layer.
+Different prototypes of this layer were tested, depending on the structure used and the element values used to represent the relation and non-relation between them.
 
-![alt text](../images/Ontology_structure.jpg)
+![Ontology structure](images/Ontology_structure.jpg)
 
 # Architecture
 
+The architecture of the model proposal consisted on using a pre-trained CNN with two additional dense layers(one per task), and finally concatenating the Ontology Layer to the top.
+
+![Architecture](images/Model_Proposal.jpg)
+
 # Results
+
+Below, it can be seen the performance of some structures and relational values combinations for the Recipes5k dataset.
+
+![Ingredients F1-score for different Ontology proposals](images/recipes5k_ingredients_f1score.jpeg)
+
+Comparison of precision between baseline model (MTL) and our best model (DI-II) on VireoFood-172 dish labels 
+
+![Dish precision comparison](images/precision_SL_comparison.jpeg)
+
+Comparison of precision between baseline model (MTL) and our best model (DI-II) on VireoFood-172 ingredient labels
+
+![Ingredient precision comparison](images/precision_ML_comparison.jpeg)
 
 # Prepare environment
 
