@@ -90,7 +90,9 @@ To execute the models execute the script **main_train.py** passing a configurati
 
 **_python -u main_train.py config_file=config_files/config_mtl_dish_ingr_ingr_dish_ont_prob_vireo_**
 
-The confi_files directory contains all the configuration files used. The set the hyperparameters for each execution as well as the dataset used, ontology used and the target directories where to save the results.
+The config_files directory contains all the configuration files used. The set the hyperparameters for each execution as well as the dataset used, ontology used and the target directories where to save the results.
+
+The different models can be executed sequentially if the execution commands are added to an _.sh_ file, as it is done in **train_nets_ont_vireo.sh**
 
 
 # Results
