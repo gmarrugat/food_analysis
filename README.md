@@ -23,6 +23,19 @@ the ontology layer and it will be appreciated how hierarchical relations between
 tasks benefits classification. Finally, the result will be a model which will be
 able to simultaneously predict two food-related tasks; dish and ingredients.
 
+# Hypothesis
+
+This MSc project was begun with the idea that the relations between the elements in a food picture could help their own detection. From this hypothesis some questions aroused: Which relations would help more? How would be represented this relations? Which classes would obtain more benefit?...  
+
+# Model Proposal
+
+In order to represent these relations and include them in the model, a two dimensional layer was created, 
+
+![alt text](../images/Ontology_structure.jpg)
+
+# Architecture
+
+# Results
 
 # Prepare environment
 
