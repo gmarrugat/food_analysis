@@ -25,7 +25,7 @@ able to simultaneously predict two food-related tasks; dish and ingredients.
 
 # Hypothesis
 
-This MSc project was begun with the idea that the relations between the elements in a food picture could help their own detection. From this hypothesis some questions aroused: Which relations would help more? How would be represented this relations? Which classes would obtain more benefit?...  
+This MSc project was begun with the idea that the relations between the elements in a food picture could help their own detection. From this hypothesis some questions aroused: Which relations would help more? How would be represented these relations? Which classes would obtain more benefit?...  
 
 # Model Proposal
 
