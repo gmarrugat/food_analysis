@@ -21,39 +21,6 @@ import os
 
 from sklearn.metrics import confusion_matrix
 
-#def predict_dishes(model, images_dir, prediction_file):    
-#    
-#    dish_lbls_pred = []
-#    pred_directory = 'results/precision_dishes'
-#    
-#    if not os.path.exists(pred_directory):
-#        os.makedirs(pred_directory)
-#    
-#   f = open(os.path.join(pred_directory,prediction_file),'w')
-
-#   for root, subdirs, files in os.walk(images_dir):
-#
-#   if files:
-#
-#       for root_2, subdirs_2, files_2 in os.walk(root):
-#       
-#           for img_file in files_2:
-#           
-#                   img = image.load_img(os.path.join(root,img_file),target_size=(299,299,3))
-#                   img = image.img_to_array(img)
-#                   img = img/255
-#                    img = np.expand_dims(img,axis=0)
-                
-#                    prediction = model.predict(img)
-                
-#                    SL_prediction = prediction[0][0]
-                
-#                    dish_lbls_pred.append(SL_prediction.argmax())
-                    ##print(SL_prediction.argmax())
-#                    f.write(str(SL_prediction.argmax())+'\n')
-
-#    dish_lbls_pred = np.array(dish_lbls_pred)
-
 def predict_dishes(model, images_dir, imgs_to_pred_file, pred_directory, prediction_file):    
     
     dish_lbls_pred = []
@@ -179,54 +146,54 @@ images_dir = 'datasets/VireoFood172/images/'
 
 def main(params):
 
-    #print('Food Multitask with Dish Ingredient Probability Ontology')
-    #model = built_model(params["n_dishes"], params["n_ingredients"], params["total_concepts"], params["ontology_list"][0], params["weights_list"][0])
-    #prediction_file = 'pred_food_multitask_dish_ingr_ont.txt'
-    #prediction_ingr_file = 'pred_food_multitask_dish_ingr_ont.txt'
-    #prob_prediction_ingr_file = 'prob_pred_food_multitask_dish_ingr_ont.txt'
-    #out_of_confidence_predictions_file = 'out_of_conf_pred_food_multitask_dish_ingr_ont.txt'
+    print('Food Multitask with Dish Ingredient Probability Ontology')
+    model = built_model(params["n_dishes"], params["n_ingredients"], params["total_concepts"], params["ontology_list"][0], params["weights_list"][0])
+    prediction_file = 'pred_food_multitask_dish_ingr_ont.txt'
+    prediction_ingr_file = 'pred_food_multitask_dish_ingr_ont.txt'
+    prob_prediction_ingr_file = 'prob_pred_food_multitask_dish_ingr_ont.txt'
+    out_of_confidence_predictions_file = 'out_of_conf_pred_food_multitask_dish_ingr_ont.txt'
 
-    #predict_dishes(model, params["images_dir"], params["imgs_to_pred_file"], params["pred_directory"], prediction_file)
-    #predict_ingredients(model, params["images_dir"], params["prob_confidence"], params["imgs_to_pred_file"], params["pred_ingr_directory"], prediction_ingr_file,prob_prediction_ingr_file, out_of_confidence_predictions_file)
+    predict_dishes(model, params["images_dir"], params["imgs_to_pred_file"], params["pred_directory"], prediction_file)
+    predict_ingredients(model, params["images_dir"], params["prob_confidence"], params["imgs_to_pred_file"], params["pred_ingr_directory"], prediction_ingr_file,prob_prediction_ingr_file, out_of_confidence_predictions_file)
     
-    #print('Food Multitask Baseline')
-    #model = load_model('../models/food_multitask/epoch_9.h5')
-    #prediction_file = 'pred_food_multitask.txt'
-    #prediction_ingr_file = 'pred_food_multitask.txt'
-    #prob_prediction_ingr_file = 'prob_pred_food_multitask.txt'
-    #out_of_confidence_predictions_file = 'out_of_conf_pred_food_multitask.txt'
+    print('Food Multitask Baseline')
+    model = load_model('../models/food_multitask/epoch_9.h5')
+    prediction_file = 'pred_food_multitask.txt'
+    prediction_ingr_file = 'pred_food_multitask.txt'
+    prob_prediction_ingr_file = 'prob_pred_food_multitask.txt'
+    out_of_confidence_predictions_file = 'out_of_conf_pred_food_multitask.txt'
 
-    #predict_dishes(model, params["images_dir"], params["imgs_to_pred_file"], params["pred_directory"], prediction_file)
-    #predict_ingredients(model, params["images_dir"], params["prob_confidence"], params["imgs_to_pred_file"], params["pred_ingr_directory"], prediction_ingr_file,prob_prediction_ingr_file, out_of_confidence_predictions_file)
+    predict_dishes(model, params["images_dir"], params["imgs_to_pred_file"], params["pred_directory"], prediction_file)
+    predict_ingredients(model, params["images_dir"], params["prob_confidence"], params["imgs_to_pred_file"], params["pred_ingr_directory"], prediction_ingr_file,prob_prediction_ingr_file, out_of_confidence_predictions_file)
     
-    #print('Food Multitask with Dish Ingredient Negative Probability Ontology')
-    #model = built_model(params["n_dishes"], params["n_ingredients"], params["total_concepts"], params["ontology_list"][1], params["weights_list"][1])
-    #prediction_file = 'pred_food_multitask_dish_ingr_ont_neg.txt'
-    #prediction_ingr_file = 'pred_food_multitask_dish_ingr_ont_neg.txt'
-    #prob_prediction_ingr_file = 'prob_pred_food_multitask_dish_ingr_ont_neg.txt'
-    #out_of_confidence_predictions_file = 'out_of_conf_pred_food_multitask_dish_ingr_ont_neg.txt'
+    print('Food Multitask with Dish Ingredient Negative Probability Ontology')
+    model = built_model(params["n_dishes"], params["n_ingredients"], params["total_concepts"], params["ontology_list"][1], params["weights_list"][1])
+    prediction_file = 'pred_food_multitask_dish_ingr_ont_neg.txt'
+    prediction_ingr_file = 'pred_food_multitask_dish_ingr_ont_neg.txt'
+    prob_prediction_ingr_file = 'prob_pred_food_multitask_dish_ingr_ont_neg.txt'
+    out_of_confidence_predictions_file = 'out_of_conf_pred_food_multitask_dish_ingr_ont_neg.txt'
 
-    #predict_dishes(model, params["images_dir"], params["imgs_to_pred_file"], params["pred_directory"], prediction_file)
-    #predict_ingredients(model, params["images_dir"], params["prob_confidence"], params["imgs_to_pred_file"], params["pred_ingr_directory"], prediction_ingr_file,prob_prediction_ingr_file, out_of_confidence_predictions_file)
+    predict_dishes(model, params["images_dir"], params["imgs_to_pred_file"], params["pred_directory"], prediction_file)
+    predict_ingredients(model, params["images_dir"], params["prob_confidence"], params["imgs_to_pred_file"], params["pred_ingr_directory"], prediction_ingr_file,prob_prediction_ingr_file, out_of_confidence_predictions_file)
 
     print('Food Multitask with Dish Ingredient Ingredient Ingredient Negative Probability Ontology')
     model = built_model(params["n_dishes"], params["n_ingredients"], params["total_concepts"], params["ontology_list"][2], params["weights_list"][2])
-    #prediction_file = 'pred_food_multitask_dish_ingr_ingr_ingr_ont_neg.txt'
+    prediction_file = 'pred_food_multitask_dish_ingr_ingr_ingr_ont_neg.txt'
     prediction_ingr_file = 'pred_food_multitask_dish_ingr_ingr_ingr_ont_neg.txt'
     prob_prediction_ingr_file = 'prob_pred_food_multitask_dish_ingr_ingr_ingr_ont_neg.txt'
     out_of_confidence_predictions_file = 'out_of_conf_pred_food_multitask_dish_ingr_ingr_ingr_ont_neg.txt'
 
-    #predict_dishes(model, params["images_dir"], params["imgs_to_pred_file"], params["pred_directory"], prediction_file)
+    predict_dishes(model, params["images_dir"], params["imgs_to_pred_file"], params["pred_directory"], prediction_file)
     predict_ingredients(model, params["images_dir"], params["prob_confidence"], params["imgs_to_pred_file"], params["pred_ingr_directory"], prediction_ingr_file,prob_prediction_ingr_file, out_of_confidence_predictions_file)
 
     print('Food Multitask with Ingredient Ingredient Negative Probability Ontology')
     model = built_model(params["n_dishes"], params["n_ingredients"], params["total_concepts"], params["ontology_list"][3], params["weights_list"][3])
-    #prediction_file = 'pred_food_multitask_ingr_ingr_ont_neg.txt'
+    prediction_file = 'pred_food_multitask_ingr_ingr_ont_neg.txt'
     prediction_ingr_file = 'pred_food_multitask_ingr_ingr_ont_neg.txt'
     prob_prediction_ingr_file = 'prob_pred_food_multitask_ingr_ingr_ont_neg.txt'
     out_of_confidence_predictions_file = 'out_of_conf_pred_food_multitask_ingr_ingr_ont_neg.txt'
 
-    #predict_dishes(model, params["images_dir"], params["imgs_to_pred_file"], params["pred_directory"], prediction_file)
+    predict_dishes(model, params["images_dir"], params["imgs_to_pred_file"], params["pred_directory"], prediction_file)
     predict_ingredients(model, params["images_dir"], params["prob_confidence"], params["imgs_to_pred_file"], params["pred_ingr_directory"], prediction_ingr_file,prob_prediction_ingr_file, out_of_confidence_predictions_file)
 
 
