@@ -22,3 +22,32 @@ At the end, the results obtained will be compared to a baseline model without
 the ontology layer and it will be appreciated how hierarchical relations between
 tasks benefits classification. Finally, the result will be a model which will be
 able to simultaneously predict two food-related tasks; dish and ingredients.
+
+
+# Prepare environment
+
+To be able to run the code in this repository it is required to create an environment with the following packages:
+
+* tensorflow
+* keras
+* numpy
+* pandas
+* matplotlib
+* scikit-learn
+* multimodal-keras-wrapper
+
+If the code is desired to be run on a GPU (install tensorflow-gpu), it is important to take care about the compatibility of the CUDA version with packages versions. In our case, it was CUDA 8.0, compatible with tensorflow-gpu == 1.4.0 and keras == 2.2, which force us to create a python 2.7 environment.
+
+# Prepare Dataset
+
+Download the [Recipes5k](http://www.ub.edu/cvub/recipes5k/) and [Vireo-Food 172](http://vireo.cs.cityu.edu.hk/VireoFood172/) datasets and locate them in dataset directory in their own respective folders. Each download file contains the whole image database, class labels files and train, validation and test split files. 
+
+# Building Ontology
+ 
+The  methodology to build the ontology is different for the two datasets.
+
+For Recipes5k, the notebook Recipes5k_prepare_data creates the files which contain the different relations, probabilities and concepts list. Once these files are generated, executing Food_Analysis.py file will generate the different Ontology files structures. At the end of the script Food_Analysis.py there is the execution parameters, probabilities and ontology_type define which type of relational value will conform the ontology generated.
+
+It was the beginning of the project and we were playing around with the data, that´s why we used a notebook. 
+
+For VireoFood-172, just run make_ontology_matrix.py and all the different structure value combinations will be built.
