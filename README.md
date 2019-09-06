@@ -23,6 +23,36 @@ the ontology layer and it will be appreciated how hierarchical relations between
 tasks benefits classification. Finally, the result will be a model which will be
 able to simultaneously predict two food-related tasks; dish and ingredients.
 
+# Hypothesis
+
+This MSc project was begun with the idea that the relations between the elements in a food picture could help their own detection. From this hypothesis some questions aroused: Which relations would help more? How would be represented these relations? Which classes would obtain more benefit?...  
+
+# Model Proposal
+
+In order to represent these relations and include them in the model, a two dimensional layer was created, called the Ontology layer.
+Different prototypes of this layer were tested, depending on the structure used and the element values used to represent the relation and non-relation between them.
+
+![Ontology structure](images/Ontology_structure.jpg)
+
+# Architecture
+
+The architecture of the model proposal consisted on using a pre-trained CNN with two additional dense layers(one per task), and finally concatenating the Ontology Layer to the top.
+
+![Architecture](images/Model_Proposal.jpg)
+
+# Results
+
+Below, it can be seen the performance of some structures and relational values combinations for the Recipes5k dataset.
+
+![Ingredients F1-score for different Ontology proposals](images/recipes5k_ingredients_f1score.jpeg)
+
+Comparison of precision between baseline model (MTL) and our best model (DI-II) on VireoFood-172 dish labels 
+
+![Dish precision comparison](images/precision_SL_comparison.jpeg)
+
+Comparison of precision between baseline model (MTL) and our best model (DI-II) on VireoFood-172 ingredient labels
+
+![Ingredient precision comparison](images/precision_ML_comparison.jpeg)
 
 # Prepare environment
 
@@ -48,9 +78,9 @@ The notebook **Analyse image distribution.ipynb** does a proper statistical anal
  
 The  methodology to build the ontology is different for the two datasets.
 
-For Recipes5k, the notebook **Recipes5k_prepare_data.ipynb** creates the files which contain the different relations, probabilities and concepts list. Once these files are generated, executing **Food_Analysis.py** file will generate the different Ontology files structures. At the end of the script **Food_Analysis.py** there is the execution parameters, _probabilities_ and _ontology_type_ define which type of relational value will conform the ontology generated.
+For Recipes5k, the notebook **Recipes5k_prepare_data.ipynb** creates the files which contain the different relations, probabilities and concepts list. Once these files are generated, executing **Food_Analysis.py** file will generate the different Ontology files structures. At the end of the script **Food_Analysis.py** there are the execution parameters, _probabilities_ and _ontology_type_ define which type of relational value will conform the ontology generated.
 
-It was the beginning of the project and we were playing around with the data, that´s why we used a notebook. 
+It was the beginning of the project and we were playing around with the data, that´s why we used a notebook to do a tough task like this. 
 
 For VireoFood-172, just run **make_ontology_matrix.py** and all the different structure value combinations will be built.
 
@@ -60,7 +90,9 @@ To execute the models execute the script **main_train.py** passing a configurati
 
 **_python -u main_train.py config_file=config_files/config_mtl_dish_ingr_ingr_dish_ont_prob_vireo_**
 
-The confi_files directory contains all the configuration files used. The set the hyperparameters for each execution as well as the dataset used, ontology used and the target directories where to save the results.
+The config_files directory contains all the configuration files used. The set the hyperparameters for each execution as well as the dataset used, ontology used and the target directories where to save the results.
+
+The different models can be executed sequentially if the execution commands are added to an _.sh_ file, as it is done in **train_nets_ont_vireo.sh**.
 
 
 # Results
